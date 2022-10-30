@@ -2,7 +2,7 @@ const tlLeave = gsap.timeline({ defaults: { duration: 0.75, ease: "Power2.easeOu
 const tlEnter = gsap.timeline({ defaults: { duration: 0.75, ease: "Power2.easeOut" } })
 
 const leaveAnimation = (current, done) => {
-    const product = current.querySelector('.image-container') 
+    const product = current.querySelector('.image-container')
     const text = current.querySelector(".showcase-text") 
     const circles = current.querySelectorAll(".circle") 
     const arrow = current.querySelector(".showcase-arrow") 
@@ -25,7 +25,6 @@ const leaveAnimation = (current, done) => {
 
 
 const enterAnimation = (current, done, gradient) => {
-    console.log(gradient)
     const product = current.querySelector('.image-container') 
     const text = current.querySelector(".showcase-text") 
     const circles = current.querySelectorAll(".circle") 
@@ -53,7 +52,7 @@ barba.init({
         {
             name: 'default',
             once(data){
-                const done = this.async
+                const done = this.async()
                 let next = data.next.container
                 let gradient = getGradient(data.next.namespace)
                 gsap.set("body", {background: gradient});
@@ -73,16 +72,21 @@ barba.init({
         },
         {
             name: "product-transition",
-            from: {namespace: ['handbag',"boot","hat"]},
+            from: {namespace: 'handbag'},
             to: {namespace: "product"},
             enter(data){
-                const done = this.async();
+                const done = this.async()
                 let next = data.next.container
                 productEnterAnimation(next, done)
+                console.log("slide up")
             }
         }
-    ]
-})
+    ],
+});
+
+function productEnterAnimation(next, done){
+    tlEnter.fromTo(next, {y: "100%" }, { y: "0%" })
+    }
 
 function getGradient(namespace) {
     switch (namespace) {
