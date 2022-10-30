@@ -26,6 +26,7 @@ nav{
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 15%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.06);
 }
 nav img{
   transform: scale(0.8);
