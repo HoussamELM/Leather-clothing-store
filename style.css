@@ -7,6 +7,8 @@
 
 body {
   background: linear-gradient(260deg, #b75d62, #754d4f);
+  overflow: scroll;
+
 }
 
 .showcase{
@@ -45,7 +47,8 @@ nav img{
   flex: 1;
 }
 .image-container img{
-  width: 80%;
+  width: 90%;
+  margin-bottom: 30%;
 }
 .showcase-text{
   flex: 1;
@@ -63,12 +66,14 @@ nav img{
 }
 
 .showcase-button{
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 3rem;
+  border-radius: 10px;
   border: none;
   font-weight: 500;
   font-size: 0.8rem;
   font-family: "Poppins", sans-serif;
 }
+
 .showcase-arrow{
   position: absolute;
   right: 15%;
@@ -160,9 +165,12 @@ br{
     height: 40vh;
     bottom: 12%;
     width: 70%;
+    overflow: visible;
   }
   .image-container img{
-width: 130%;
+width: 100%;
+scale: 1.2;
+margin-bottom: 0;
   }
   .showcase-title{
     font-size: 1.8rem;
@@ -213,3 +221,4 @@ br{
   padding: 0.8rem 7rem; 
 }
 }
+
