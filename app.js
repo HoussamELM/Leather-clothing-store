@@ -68,11 +68,17 @@ barba.init({
                 let next = data.next.container;
                 let gradient = getGradient(data.next.namespace)
                 enterAnimation(next, done, gradient)
+            },
+            leave(data){
+                const done = this.async();
+                let current = data.current.container;
+                productLeaveAnimation(current, done)
             }
         },
         {
             name: "product-transition",
-            from: {namespace: 'handbag'},
+            sync: true,
+            from: {namespace:'handbag' | 'boot' | 'hat'},
             to: {namespace: "product"},
             enter(data){
                 const done = this.async()
@@ -83,9 +89,14 @@ barba.init({
         }
     ],
 });
+function productLeaveAnimation(next, done){
+    tlLeave.fromTo(".card", {y:0, opacity: 1}, {y:50, opacity: 0, stagger: 0.1, onComplete: done})
+    tlLeave.fromTo(next, {y: "0" }, { y: "100%" })
+    }
 
 function productEnterAnimation(next, done){
     tlEnter.fromTo(next, {y: "100%" }, { y: "0%" })
+    tlEnter.fromTo(".card", {y:50, opacity: 0}, {y:0, opacity: 1, stagger: 0.1, onComplete: done})
     }
 
 function getGradient(namespace) {
