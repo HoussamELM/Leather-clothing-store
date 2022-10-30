@@ -3,11 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none; 
+}
+
+*::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 body {
   background: linear-gradient(260deg, #b75d62, #754d4f);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .showcase{
@@ -150,11 +156,16 @@ br{
 
 @media screen and (max-width: 768px){
 
+  .body{
+    overflow: hidden;
+  }
+
   .showcase{
     flex-direction: column;
     padding: 5%;
     justify-content: space-evenly;
     min-height: 90vh;
+    overflow: hidden;
   }
   .image-container{
     min-height: 40vh;
@@ -164,12 +175,12 @@ br{
     height: 40vh;
     bottom: 12%;
     width: 70%;
-    overflow: visible;
+    
   }
   .image-container img{
 width: 100%;
 scale: 1.2;
-margin-bottom: 0;
+
   }
   .showcase-title{
     font-size: 1.8rem;
@@ -206,18 +217,33 @@ br{
     bottom: 50%;
     z-index: 100;
 }
-.showcase-a{
-  position: absolute;
+.mobile{
+  visibility: visible !important;
   z-index: 100;
-  transform: translate(50%, 50%);
-  top: 90%;
+  position: absolute;
+  bottom: 5%;
   right: 50%;
-  border-radius: 10px;
-  
+  transform: translate(50%, 50%);
 }
+
 .showcase-button{
   border-radius: 10px;
   padding: 0.8rem 7rem; 
 }
+
+.desktop{
+  visibility: hidden;
+}
+}
+.mobile{
+  visibility: hidden;
 }
 
+a{
+text-decoration: none;
+}
+
+.boot{
+  transform: scaleX(-1);
+  width: 10%;
+}
