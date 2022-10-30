@@ -78,6 +78,7 @@ nav img{
 
 .circle{
   position: absolute;
+  z-index: -111;
 }
 .circle-1{
   left: -3%;
