@@ -2,10 +2,10 @@ const tlLeave = gsap.timeline({ defaults: { duration: 0.75, ease: "Power2.easeOu
 const tlEnter = gsap.timeline({ defaults: { duration: 0.75, ease: "Power2.easeOut" } })
 
 const leaveAnimation = (current, done) => {
-    const product = current.querySelector('.image-container')
-    const text = current.querySelector(".showcase-text")
-    const circles = current.querySelectorAll(".circle")
-    const arrow = current.querySelector(".showcase-arrow")
+    const product = current.querySelector('.image-container') 
+    const text = current.querySelector(".showcase-text") 
+    const circles = current.querySelectorAll(".circle") 
+    const arrow = current.querySelector(".showcase-arrow") 
 
     return (
         tlLeave.fromTo(
@@ -26,14 +26,14 @@ const leaveAnimation = (current, done) => {
 
 const enterAnimation = (current, done, gradient) => {
     console.log(gradient)
-    const product = current.querySelector('.image-container')
-    const text = current.querySelector(".showcase-text")
-    const circles = current.querySelectorAll(".circle")
-    const arrow = current.querySelector(".showcase-arrow")
-    const body = current.querySelector("body")
+    const product = current.querySelector('.image-container') 
+    const text = current.querySelector(".showcase-text") 
+    const circles = current.querySelectorAll(".circle") 
+    const arrow = current.querySelector(".showcase-arrow") 
+    const body = current.querySelector("body") 
 
     return (
-        tlEnter.fromTo(arrow, { opacity: 0.5, y: 50 }, { opacity: 1, y: 0 }
+        tlEnter.fromTo(arrow, { opacity: 0, y: 50 }, { opacity: 1, y: 0 }
         ),
         tlEnter.to("body", {background: gradient}, "<"
         ),
@@ -43,8 +43,6 @@ const enterAnimation = (current, done, gradient) => {
         ),
         tlEnter.fromTo(circles, { y: -200, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.15, ease: "back.out(3)", duration: 1 }, "<10%"
         )
-
-
     )
 }
 

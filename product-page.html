@@ -13,92 +13,81 @@
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="handbag-body" data-barba="wrapper">
+  <body data-barba="wrapper">
     <nav>
-      <img src="./images/burger.svg" alt="burger-menu" />
+      <img src="./images/burger.svg" />
       <a class="logo" href="./index.html">Bags.</a>
       <img class="shopping-bag" src="./images/shopping-cart.svg" alt="Cart" />
     </nav>
 
-    <section class="showcase" data-barba="container" data-barba-namespace="handbag">
-      <div class="image-container">
-        <img src="./images/frontpage-handbag.png" alt="" />
-      </div>
-      <div class="showcase-text">
-        <h2 class="showcase-title">Going places. With bags of beauty</h2>
-        <h3 class="showcase-subtitle">
-          On everyopne's wish list this seaseon? Timeless presents they'll
-          treasure forever, including our must have Leisara handbag.
-        </h3>
-        <a href="./product-page.html">
-          <button class="showcase-button">Explore</button>
-        </a>
-      </div>
-      <a href="./boot.html">
-        <svg
-          class="showcase-arrow"
-          width="26"
-          height="46"
-          viewBox="0 0 26 46"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M25.1213 25.1213C26.2929 23.9497 26.2929 22.0503 25.1213 20.8787L6.02944 1.7868C4.85786 0.615224 2.95837 0.615224 1.7868 1.7868C0.615224 2.95837 0.615224 4.85786 1.7868 6.02944L18.7574 23L1.7868 39.9706C0.615224 41.1421 0.615224 43.0416 1.7868 44.2132C2.95837 45.3848 4.85786 45.3848 6.02944 44.2132L25.1213 25.1213ZM19 26H23V20H19V26Z"
-            fill="white"
-          />
-        </svg>
-      </a>
-      <svg
-        class="circle circle-1"
-        width="243"
-        height="243"
-        viewBox="0 0 243 243"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="121.5"
-          cy="121.5"
-          r="121.5"
-          fill="white"
-          fill-opacity="0.25"
-        />
-      </svg>
-      <svg
-        class="circle circle-2"
-        width="243"
-        height="243"
-        viewBox="0 0 243 243"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="121.5"
-          cy="121.5"
-          r="121.5"
-          fill="white"
-          fill-opacity="0.25"
-        />
-      </svg>
-      <svg
-        class="circle circle-3"
-        width="243"
-        height="243"
-        viewBox="0 0 243 243"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="121.5"
-          cy="121.5"
-          r="121.5"
-          fill="white"
-          fill-opacity="0.25"
-        />
-      </svg>
-    </section>
-
+    <div
+      class="product-section"
+      data-barba="container"
+      dara-barba-namespace="product"
+    >
+    <div class="product-description">
+      <h2>Shop our signatures.</h2>
+      <p>
+        Your shortcut to sophistication. Our signatures never go out of style
+      </p>
+    </div>
+    <div class="product-gallery">
+        <div class="card">
+            <img src="./images/blackcard.png" class="product-img" alt="product-img">
+            <h3>Leisara</h3>
+            <p>Black leather</p>
+            <div class="price">
+                <h4>300$</h4>
+                <img src="./images/product-cart.svg" class="product-card" alt="cart">
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/yellowcard.png" class="product-img" alt="product-img">
+            <h3>Leisara</h3>
+            <p>Black leather</p>
+            <div class="price">
+                <h4>300$</h4>
+                <img src="./images/product-cart.svg" class="product-card" alt="cart">
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/tancard.png" class="product-img" alt="product-img">
+            <h3>Leisara</h3>
+            <p>Black leather</p>
+            <div class="price">
+                <h4>300$</h4>
+                <img src="./images/product-cart.svg" class="product-card" alt="cart">
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/bluecard.png" class="product-img" alt="product-img">
+            <h3>Leisara</h3>
+            <p>Black leather</p>
+            <div class="price">
+                <h4>300$</h4>
+                <img src="./images/product-cart.svg" class="product-card" alt="cart">
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/blackcard.png" class="product-img" alt="product-img">
+            <h3>Leisara</h3>
+            <p>Black leather</p>
+            <div class="price">
+                <h4>300$</h4>
+                <img src="./images/product-cart.svg" class="product-card" alt="cart">
+            </div>
+        </div>
+        <div class="card">
+            <img src="./images/tancard.png" class="product-img" alt="product-img">
+            <h3>Leisara</h3>
+            <p>Black leather</p>
+            <div class="price">
+                <h4>300$</h4>
+                <img src="./images/product-cart.svg" class="product-card" alt="cart">
+            </div>
+        </div>
+    </div>
+</div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
       integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
