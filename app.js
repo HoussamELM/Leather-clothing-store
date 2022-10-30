@@ -70,6 +70,16 @@ barba.init({
                 let gradient = getGradient(data.next.namespace)
                 enterAnimation(next, done, gradient)
             }
+        },
+        {
+            name: "product-transition",
+            from: {namespace: ['handbag',"boot","hat"]},
+            to: {namespace: "product"},
+            enter(data){
+                const done = this.async();
+                let next = data.next.container
+                productEnterAnimation(next, done)
+            }
         }
     ]
 })
