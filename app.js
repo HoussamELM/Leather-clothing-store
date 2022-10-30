@@ -23,21 +23,24 @@ const leaveAnimation = (current, done) => {
     )}
 
     
-    const enterAnimation = (current, done) => {
+        const enterAnimation = (current, done, gradient) => {
         const product = current.querySelector('.image-container')
         const text = current.querySelector(".showcase-text")
         const circles = current.querySelectorAll(".circle")
         const arrow = current.querySelector(".showcase-arrow")
     
         return (
-            tlLeave.fromTo(arrow,   { opacity: 0, y: 50 },{ opacity: 1, y: 0 }
+            tlEnter.fromTo(arrow,   { opacity: 0, y: 50 },{ opacity: 1, y: 0 }
             ),
-            tlLeave.fromTo(product, {y: -100, opacity: 0}, {y: 0, opacity: 1, onComplete: done}, "<"
+            tlEnter.To('body', {background: gradient}, "<"
             ),
-            tlLeave.fromTo(text,    {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: done}, "<"
+            tlEnter.fromTo(product, {y: -100, opacity: 0}, {y: 0, opacity: 1, onComplete: done}, "<"
             ),
-            tlLeave.fromTo(circles, {y: -200, opacity: 0}, {y: 0, opacity: 1, stagger: 0.05}, "<"
+            tlEnter.fromTo(text,    {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: done}, "<"
+            ),
+            tlEnter.fromTo(circles, {y: -200, opacity: 0}, {y: 0, opacity: 1, stagger: 0.05}, "<"
             )
+            
         
         )}
 
@@ -55,8 +58,22 @@ barba.init({
             enter(data) {
                 const done = this.async()
                 let next = data.next.container;
-                enterAnimation(next, done)
+                let gradient = getGradient(data.next.namespace)
+                enterAnimation(next, done, gradient)
             }
         }
     ]
 })
+
+function getGradient(name)
+{
+    switch(name){
+        case "handbag":
+            return "linear-gradient(260deg, #b75d62, #754d4f)";
+        case "boot":
+            return "linear-gradient(260deg, #5d8cb7, #4c4f70)";
+        case "hat":
+            return "linear-gradient(260deg, #b27a5c, #754d4f)";
+    }
+    console.log("changed to", name);
+}
