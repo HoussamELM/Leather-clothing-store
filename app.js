@@ -36,7 +36,7 @@ const enterAnimation = (current, done, gradient) => {
         ),
         tlEnter.to("body", {background: gradient}, "<"
         ),
-        tlEnter.fromTo(product, { y: -100, opacity: 0 }, { y: 0, opacity: 1, onComplete: done }, "<"
+        tlEnter.fromTo(product, { y: -100 }, { y: 0, onComplete: done }, "<"
         ),
         tlEnter.fromTo(text, { y: 100, opacity: 0 }, { y: 0, opacity: 1, onComplete: done }, "<"
         ),
